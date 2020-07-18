@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="IClient.cs" />
+    <Compile Include="NewMessageEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
