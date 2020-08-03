@@ -7,8 +7,8 @@
     <ProjectGuid>{C5BBB767-2E0B-485E-9743-296844677074}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sandbox</RootNamespace>
-    <AssemblyName>Sandbox</AssemblyName>
+    <RootNamespace>MMSComunication</RootNamespace>
+    <AssemblyName>MMSComunication</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,9 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="DataTypes.cs" />
+    <Compile Include="Direction.cs" />
     <Compile Include="IClient.cs" />
+    <Compile Include="MMSVariable.cs" />
     <Compile Include="NewMessageEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transaction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

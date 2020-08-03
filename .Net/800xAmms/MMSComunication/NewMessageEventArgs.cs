@@ -1,8 +1,10 @@
-﻿namespace MMSComunication
+﻿using System.Collections.Generic;
+
+namespace MMSComunication
 {
 
     public class NewMessageEventArgs
     {
-        public string Message;
+        public List<MMSVariable> MmsVariables;
     }
 }
