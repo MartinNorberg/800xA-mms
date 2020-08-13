@@ -189,8 +189,8 @@ namespace MMSComunication
                         value = null;
                         return false;
                     case DataTypes.VisibleStr:
-                        value = null;
-                        return false;
+                        value = System.Text.Encoding.ASCII.GetString(bytes);
+                        return true;
                     case DataTypes.Time:
                         value = null;
                         return false;

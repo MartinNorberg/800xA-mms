@@ -7,7 +7,7 @@
     {
         static void Main(string[] args)
         {       
-            var client = new Client("192.168.1.14", 102);
+            var client = new Client("127.0.0.1", 102);
             client.NewMessage += NewMessage;
             client.StartClient();
         }

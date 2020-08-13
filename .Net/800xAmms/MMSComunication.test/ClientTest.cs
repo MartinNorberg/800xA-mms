@@ -8,7 +8,6 @@
         [Test]
         public void ClientShouldThrowArgumentExceptionIfEmptyIpAddress()
         {
-
             Assert.Throws<ArgumentException>(() => new Client("", 102));
         }
 
@@ -68,5 +67,20 @@
             Assert.AreEqual("False", mmsVariable[0].Value);
             Assert.AreEqual("0", mmsVariable[1].Value);
         }
+
+        [TestCase(new byte[] { 3, 0, 0, 36, 2, 240, 128, 160, 27, 2, 1, 1, 165, 22, 160, 10, 48, 8, 160, 6, 128, 4, 84, 69, 83, 84, 160, 8, 138, 6, 72, 69, 74, 83, 65, 78 })]
+        public void TryGetMmsVariablesShouldReturnValueHEJSAN(byte[] mmsData)
+        {
+            MMSVariable.TryGetMmsVariables(mmsData, out var mmsVariable);
+            Assert.AreEqual("HEJSAN", mmsVariable[0].Value);
+        }
+
+        [TestCase(new byte[] { 3, 0, 0, 54, 2, 240, 128, 160, 45, 2, 1, 1, 165, 40, 160, 10, 48, 8, 160, 6, 128, 4, 84, 69, 83, 84, 160, 26, 162, 24, 131, 1, 0, 135, 5, 8, 0, 0, 0, 0, 133, 1, 0, 133, 1, 0, 138, 0, 133, 1, 0, 133, 1, 0, 0})]
+        public void TryGetMmsVariablesShouldMyDataStructBoolRealIntDintStringDatetime(byte[] mmsData)
+        {
+            MMSVariable.TryGetMmsVariables(mmsData, out var mmsVariable);
+            Assert.AreEqual(6, mmsVariable.Count);
+        }
+
     }
 }
